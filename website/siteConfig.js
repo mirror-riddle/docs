@@ -14,7 +14,7 @@ const users = [
     caption: 'User1',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/img/undraw_open_source.svg',
+    image: '/docs/img/undraw_open_source.svg',
     infoLink: 'https://www.facebook.com',
     pinned: true
   }
@@ -48,13 +48,13 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
+  headerIcon: 'img/redux-white.svg',
+  footerIcon: 'img/redux-white.svg',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2e8555',
+    primaryColor: '#764abc',
     secondaryColor: '#343126'
   },
 
