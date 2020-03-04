@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Promise · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Promise · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Promise</h1></header><article><div><span><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Using Promise</a></p>
+<p>The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.</p>
+<h2><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h2>
+<p><code>new Promise(executor)</code></p>
+<p><code>executor</code> 函数有两个参数（resolve 函数和 reject 函数），它执行一些异步操作，完成时执行 resolve 函数，失败时执行 reject 函数，如果它执行时抛出错误，也执行 reject 函数。</p>
+<h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
+<p>Promise 让异步方法可以像同步方法返回值那样返回一个 promise，这个 promise 可以在未来的某个时间提供最终的返回值。</p>
+<p>Promise States</p>
+<p><code>pending</code> 初始状态</p>
+<p><code>fulfilled</code> 操作成功</p>
+<p><code>rejected</code> 操作失败</p>
+<p><code>settled</code> 成功或者失败</p>
+<p>当 promise 进入 settled 状态时，<code>promise.then</code> 绑定的回调函数将会依序被调用。即使在 promise 已经 settled 的情况下，继续给<code>promise.then</code>绑定回调函数，这些函数还是会被调用的，因此异步操作完成和回调函数绑定不存在竞争条件。</p>
+<p><code>promise.then()</code> 和 <code>promise.catch()</code> 都会返回 promise, 因此他们可以连起来用。</p>
+<h2><a class="anchor" aria-hidden="true" id="静态方法"></a><a href="#静态方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>静态方法</h2>
+<p><code>Promise.all(iterable)</code> 等待所有 promises 都 resolve，或者任一个 reject。如果都 resolve，返回包含所有 resolved values 的数组。否则，以第一个 reject 的 promise 为准 reject。</p>
+<p><code>Promise.allSettled(iterable)</code> 等待所有 promises 都 settled</p>
+<p><code>Promise.race(iterable)</code> 等待最先 settled 的那个 promise</p>
+<p><code>Promise.reject(reason)</code> 返回一个以 reason reject 的 promise</p>
+<p><code>Promise.resolve(value)</code> 返回一个以 value resolve 的 promise，如果 value 是一个 promise，那么返回的 promise 会追随这个 promise 的“一举一动”</p>
+<p>##　实例方法</p>
+<p><code>promise.catch()</code> 给 promise 追加一个 rejection handler，and returns a new promise resolving to the return value of the callback if it is called, or to its original fulfillment value if the promise is instead fulfilled.</p>
+<p><code>promise.then()</code> Appends fulfillment and rejection handlers to the promise, and returns a new promise resolving to the return value of the called handler, or to its original settled value if the promise was not handled (i.e. if the relevant handler onFulfilled or onRejected is not a function).</p>
+<p><code>promise.finally()</code> Appends a handler to the promise, and returns a new promise which is resolved when the original promise is resolved. The handler is called when the promise is settled, whether fulfilled or rejected.</p>
+<h2><a class="anchor" aria-hidden="true" id="chaining"></a><a href="#chaining" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chaining</h2>
+<pre><code class="hljs css language-javascript">doSomething()
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+    <span class="hljs-keyword">return</span> doSomethingElse(result);
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newResult</span>) </span>{
+    <span class="hljs-keyword">return</span> doThirdThing(newResult);
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">finalResult</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Got the final result: "</span> + finalResult);
+  })
+  .catch(failureCallback);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="guarantees"></a><a href="#guarantees" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Guarantees</h2>
+<ol>
+<li><p>Callbacks will never be called before the completion of the current run of the JavaScript event loop.</p></li>
+<li><p>Callbacks added with then() even after the success or failure of the asynchronous operation, will be called, as above.</p></li>
+<li><p>Multiple callbacks may be added by calling then() several times. Each callback is executed one after another, in the order in which they were inserted.</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="promise-rejection-events"></a><a href="#promise-rejection-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promise rejection events</h2>
+<p>Whenever a promise is rejected, one of two events is sent to the global scope (generally, this is either the window or, if being used in a web worker, it's the Worker or other worker-based interface). The two events are:</p>
+<p><code>rejectionhandled</code></p>
+<p><code>unhandledrejection</code></p>
+<h2><a class="anchor" aria-hidden="true" id="when-promises-and-tasks-collide"></a><a href="#when-promises-and-tasks-collide" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When promises and tasks collide</h2>
+<pre><code class="hljs css language-javascript">customElement.prototype.getData = <span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.cache[url]) {
+    queueMicrotask(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">this</span>.data = <span class="hljs-keyword">this</span>.cache[url];
+      <span class="hljs-keyword">this</span>.dispatchEvent(<span class="hljs-keyword">new</span> Event(<span class="hljs-string">"load"</span>));
+    });
+  } <span class="hljs-keyword">else</span> {
+    fetch(url).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> result.arrayBuffer()).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+      <span class="hljs-keyword">this</span>.cache[url] = data;
+      <span class="hljs-keyword">this</span>.data = data;
+      <span class="hljs-keyword">this</span>.dispatchEvent(<span class="hljs-keyword">new</span> Event(<span class="hljs-string">"load"</span>));
+    )};
+  }
+};
+</code></pre>
+<p>This balances the clauses by having both situations handle the setting of data and firing of the load event within a microtask (using queueMicrotask() in the if clause and using the promises used by fetch() in the else clause).</p>
+<h2><a class="anchor" aria-hidden="true" id="common-mistakes"></a><a href="#common-mistakes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common mistakes</h2>
+<ol>
+<li><p>没有将 promises 连接起来</p></li>
+<li><p>不必要的嵌套</p></li>
+<li><p>没有用 catch()结束 promise chain</p></li>
+</ol>
+<pre><code class="hljs css language-javascript">/ Bad example! Spot <span class="hljs-number">3</span> mistakes!
+
+doSomething().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+  doSomethingElse(result) <span class="hljs-comment">// Forgot to return promise from inner chain + unnecessary nesting</span>
+  .then(<span class="hljs-function"><span class="hljs-params">newResult</span> =&gt;</span> doThirdThing(newResult));
+}).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> doFourthThing());
+<span class="hljs-comment">// Forgot to terminate chain with a catch!</span>
+
+<span class="hljs-comment">// good rules</span>
+doSomething()
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+  <span class="hljs-keyword">return</span> doSomethingElse(result);
+})
+.then(<span class="hljs-function"><span class="hljs-params">newResult</span> =&gt;</span> doThirdThing(newResult))
+.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> doFourthThing())
+.catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(error));
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="timing"></a><a href="#timing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Timing</h2>
+<p>To avoid surprises, functions passed to then() will never be called synchronously, even with an already-resolved promise:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>); <span class="hljs-comment">// 1, 2</span>
+</code></pre>
+<p>Instead of running immediately, the passed-in function is put on a microtask queue, which means it runs later when the queue is emptied at the end of the current run of the JavaScript event loop, i.e. pretty soon:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> wait = <span class="hljs-function"><span class="hljs-params">ms</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(resolve, ms));
+
+wait().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>));
+<span class="hljs-built_in">Promise</span>.resolve()
+  .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>))
+  .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>); <span class="hljs-comment">// 1, 2, 3, 4</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#syntax">Syntax</a></li><li><a href="#description">Description</a></li><li><a href="#静态方法">静态方法</a></li><li><a href="#chaining">Chaining</a></li><li><a href="#guarantees">Guarantees</a></li><li><a href="#promise-rejection-events">Promise rejection events</a></li><li><a href="#when-promises-and-tasks-collide">When promises and tasks collide</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#timing">Timing</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

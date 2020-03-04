@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Object · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Object · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Javascript</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Javascript</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/map">Map</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Html</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc2">document number 2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Second Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Object</h1></header><article><div><span><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></p>
+<h2><a class="anchor" aria-hidden="true" id="静态方法"></a><a href="#静态方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>静态方法</h2>
+<p><code>Object.assign(target, ...sources)</code> 复制一个或多个源对象的所有可枚举 own properties 到目标对象中，返回目标对象。目标对象如果和源对象有相同 key, 会覆盖掉目标对象的值。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">const</span> source = { <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">5</span> };
+
+<span class="hljs-keyword">const</span> returnedTarget = <span class="hljs-built_in">Object</span>.assign(target, source);
+
+<span class="hljs-built_in">console</span>.log(target);
+<span class="hljs-comment">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+
+<span class="hljs-built_in">console</span>.log(returnedTarget);
+<span class="hljs-comment">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+</code></pre>
+<p><code>Object.create(proto, [propertiesObject])</code> 创建一个新对象，以 proto 作为它的 prototype</p>
+<p><code>Object.defineProperty(obj, prop, descriptor)</code> 定义对象 obj 的属性</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> object1 = {};
+
+<span class="hljs-built_in">Object</span>.defineProperty(object1, <span class="hljs-string">"property1"</span>, {
+  <span class="hljs-attr">value</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">writable</span>: <span class="hljs-literal">false</span>
+});
+
+object1.property1 = <span class="hljs-number">77</span>;
+<span class="hljs-comment">// throws an error in strict mode</span>
+
+<span class="hljs-built_in">console</span>.log(object1.property1);
+<span class="hljs-comment">// expected output: 42</span>
+</code></pre>
+<p><code>Object.defineProperties(obj, props)</code></p>
+<p><code>Object.entries()</code> 返回键值对的迭代器</p>
+<p><code>Object.freeze(obj)</code> 冰冻一个对象，该对象不能被改变</p>
+<p><code>Object.fromEntries()</code> 将键值对列表转化为对象</p>
+<p><code>Object.getOwnPropertyDescriptor()</code> 返回某个属性的 property descriptor</p>
+<p><code>Object.getOwnPropertyDescriptors()</code></p>
+<p><code>Object.getOwnPropertyNames()</code></p>
+<p><code>Object.getOwnPropertySymbols()</code></p>
+<p><code>Object.getPrototypeOf()</code></p>
+<p><code>Object.is(value1, value2)</code> 比 == 和 === 都要严格。</p>
+<p><code>Object.isExtensible()</code> An object can be marked as non-extensible using Object.preventExtensions(),
+Object.seal(), or Object.freeze().</p>
+<p><code>Object.isFrozen()</code></p>
+<p><code>Object.isSealed()</code></p>
+<p><code>Object.keys()</code></p>
+<p><code>Object.values()</code></p>
+<p><code>Object.preventExtensions()</code></p>
+<p><code>Object.seal()</code> seals an object, preventing new properties from being added to it and marking all
+existing properties as non-configurable. Values of present properties can still be changed as
+long as they are writable.</p>
+<p><code>Object.setPrototypeOf()</code></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/javascript/map"><span class="arrow-prev">← </span><span>Map</span></a><a class="docs-next button" href="/docs/docs/javascript/regexp"><span class="function-name-prevnext">RegExp</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#静态方法">静态方法</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

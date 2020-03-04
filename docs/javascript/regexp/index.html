@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>RegExp · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="RegExp · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Javascript</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Javascript</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/object">Object</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Html</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc2">document number 2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Second Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">RegExp</h1></header><article><div><span><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular Expressions</a></p>
+<h2><a class="anchor" aria-hidden="true" id="regexp-instance-methods"></a><a href="#regexp-instance-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RegExp instance methods</h2>
+<p><code>reg.exec(str)</code> executes a search for a match in a specified string. Returns a result array, or null.</p>
+<p><code>reg.test(str)</code> executes a search for a match between a regular expression and a specified string. Returns true or false.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-regular-expression"></a><a href="#create-regular-expression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create regular expression</h2>
+<p>regexp literal: 加载时编译正则表达式，如果需要不变化的正则表达式，用这种方法可以提高性能</p>
+<p>constructor function: 运行时编译正则表达式，适用于参数可变的情况</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> re = <span class="hljs-regexp">/ab+c/</span>;
+
+<span class="hljs-keyword">const</span> re2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">"ab+c"</span>);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="write-regexp-pattern"></a><a href="#write-regexp-pattern" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write RegExp pattern</h2>
+<h3><a class="anchor" aria-hidden="true" id="assertions"></a><a href="#assertions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assertions</h3>
+<p><code>x(?=y)</code> Lookahead assertion: Matches x only if x is followed by y</p>
+<p><code>x(?!y)</code> Negative lookahead assertion: Matches x only if x is not followed by y</p>
+<p><code>(?&lt;=y)x</code> Lookbehind assertion: Matches x only if x is preceded by y</p>
+<p><code>(?&lt;!y)x</code> Negative lookbehind assertion: Matches x only if x is not preceded by y</p>
+<h3><a class="anchor" aria-hidden="true" id="boundaries"></a><a href="#boundaries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Boundaries</h3>
+<p><code>^</code> Matches beginning of input</p>
+<p><code>$</code> Matches end of input</p>
+<p><code>\b</code> Matches a word boundary, <code>/\bm/</code> matches the 'm' in &quot;moon&quot;</p>
+<p><code>\B</code> Matches a non-word boundary, <code>/\Bon/</code> matches &quot;on&quot; in &quot;at noon&quot;, and <code>/ye\B/</code> matches &quot;ye&quot; in &quot;possibly yesterday&quot;.</p>
+<h3><a class="anchor" aria-hidden="true" id="character-classes"></a><a href="#character-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Character Classes</h3>
+<p><code>.</code> Matches any single character except line terminators: \n, \r, \u2028 or \u2029. Inside a character set, the dot loses its special meaning and matches a literal dot.</p>
+<p><code>\d</code> Matches any digit (Arabic numeral). Equivalent to [0-9]</p>
+<p><code>\D</code> Matches any character that is not a digit (Arabic numeral). Equivalent to [^0-9]</p>
+<p><code>\w</code> Matches any alphanumeric character from the basic Latin alphabet, including the underscore. Equivalent to [A-Za-z0-9_]</p>
+<p><code>\W</code> Matches any character that is not a word character from the basic Latin alphabet. Equivalent to [^a-za-z0-9_]</p>
+<p><code>\s</code> Matches a single white space character, including space, tab, form feed, line feed and other Unicode spaces. Equivalent to [ \f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</p>
+<p><code>\S</code> Matches a single character other than white space. Equivalent to [^ \f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</p>
+<p><code>\t</code> Matches a horizontal tab.</p>
+<p><code>\r</code> Matches a carriage return.</p>
+<p><code>\n</code> Matches a linefeed.</p>
+<p><code>\v</code> Matches a vertical tab.</p>
+<p><code>\f</code> Matches a form-feed.</p>
+<p><code>[\b]</code> Matches a backspace.</p>
+<p><code>\0</code> Matches a NUL character. Do not follow this with another digit.</p>
+<p><code>\</code> Indicates that the following character should be treated specially, or &quot;escaped&quot;. For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally. For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.</p>
+<h3><a class="anchor" aria-hidden="true" id="groups-and-ranges"></a><a href="#groups-and-ranges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Groups and Ranges</h3>
+<p><code>x|y</code> Matches either x or y. For example, /green|red/ matches &quot;green&quot; in &quot;green apple&quot; and &quot;red&quot; in &quot;red apple&quot;.</p>
+<p><code>[xyz]</code> A character set. Matches any one of the enclosed characters.</p>
+<p><code>[^xyz]</code> A negated or complemented character set.</p>
+<p><code>(x)</code> Capturing group: Matches x and remembers the match. For example, /(foo)/ matches and remembers &quot;foo&quot; in &quot;foo bar&quot;.Matches are accessed using the index of the the result's elements ([1], ..., [n]) or from the predefined RegExp object's properties ($1, ..., $9).</p>
+<p><code>\n</code> Where n is a positive integer. A back reference to the last substring matching the n parenthetical in the regular expression (counting left parentheses). For example, /apple(,)\sorange\1/ matches &quot;apple, orange,&quot; in &quot;apple, orange, cherry, peach&quot;.</p>
+<p><code>(?&lt;name&gt;x)</code> Named capturing group: Matches x and stores it on the groups property of the returned matches under the name specified by <code>&lt;Name&gt;</code>. The angle brackets ('&lt;' and '&gt;') are required for group name.</p>
+<p><code>(?:x)</code> Non-capturing group: Matches x but does not remember the match. The matched substring cannot be recalled from the resulting array's elements ([1], ..., [n]) or from the predefined RegExp object's properties ($1, ..., $9).</p>
+<h3><a class="anchor" aria-hidden="true" id="quantifiers"></a><a href="#quantifiers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quantifiers</h3>
+<p><code>x*</code> Matches the preceding item x 0 or more times. For example, <code>/bo\*/</code> matches &quot;boooo&quot; in &quot;A ghost booooed&quot; and &quot;b&quot; in &quot;A bird warbled&quot;, but nothing in &quot;A goat grunted&quot;.</p>
+<p><code>x+</code> Matches the preceding item x 1 or more times. Equivalent to {1,}. For example, /a+/ matches the &quot;a&quot; in &quot;candy&quot; and all the &quot;a&quot;'s in &quot;caaaaaaandy&quot;.</p>
+<p><code>x?</code> Matches the preceding item x 0 or 1 time. For example, /e?le?/ matches the &quot;el&quot; in &quot;angel&quot; and the &quot;le&quot; in &quot;angle.&quot; If used immediately after any of the quantifiers *, +, ?, or {}, makes the quantifier non-greedy (matching the minimum number of times), as opposed to the default, which is greedy (matching the maximum number of times).</p>
+<p><code>x{n}</code> Where n is a positive integer. Matches exactly n occurrences of the preceding item x.</p>
+<p><code>x{n,}</code> Where n is a positive integer. Matches at least n occurrences of the preceding item x.</p>
+<p><code>x{n,m}</code> Where n is 0 or a positive integer, m is a positive integer, and m &gt; n. Matches at least n and at most m occurrences of the preceding item x.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p><code>RegExp.exec()</code></p>
+<p><code>RegExp.test()</code></p>
+<p><code>String.match()</code></p>
+<p><code>String.MatchAll()</code></p>
+<p><code>String.search()</code></p>
+<p><code>String.replace()</code></p>
+<p><code>String.split()</code></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/javascript/object"><span class="arrow-prev">← </span><span>Object</span></a><a class="docs-next button" href="/docs/docs/javascript/set"><span>Set</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#regexp-instance-methods">RegExp instance methods</a></li><li><a href="#create-regular-expression">Create regular expression</a></li><li><a href="#write-regexp-pattern">Write RegExp pattern</a><ul class="toc-headings"><li><a href="#assertions">Assertions</a></li><li><a href="#boundaries">Boundaries</a></li><li><a href="#character-classes">Character Classes</a></li><li><a href="#groups-and-ranges">Groups and Ranges</a></li><li><a href="#quantifiers">Quantifiers</a></li></ul></li><li><a href="#usage">Usage</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>typescript/classes · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Classes"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="typescript/classes · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="# Classes"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">typescript/classes</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="classes"></a><a href="#classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Classes</h1>
+<h2><a class="anchor" aria-hidden="true" id="pubilc-private-protected"></a><a href="#pubilc-private-protected" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pubilc, private, protected</h2>
+<p><code>public</code> 类、实例都可以访问</p>
+<p><code>private</code> 只有在包含它的类里才能访问</p>
+<p><code>protected</code> 在包含它的类里，以及子类里可以访问</p>
+<h2><a class="anchor" aria-hidden="true" id="parameter-properties"></a><a href="#parameter-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter properties</h2>
+<p>构造器的参数，如果有<code>readonly</code>, <code>public</code>, <code>private</code>, <code>protected</code> modfier 的话，会自动变成类属性。</p>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">class</span> Octopus {
+  readonly numberOfFlags: <span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">readonly name: <span class="hljs-built_in">string</span></span>) {}
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="accessors"></a><a href="#accessors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessors</h2>
+<p>First, accessors require you to set the compiler to output ECMAScript 5 or higher. Downleveling to ECMAScript 3 is not supported. Second, accessors with a get and no set are automatically inferred to be readonly. This is helpful when generating a .d.ts file from your code, because users of your property can see that they can’t change it.</p>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">const</span> fullNameMaxLength = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">class</span> Employee {
+  <span class="hljs-keyword">private</span> _fullName: <span class="hljs-built_in">string</span>;
+
+  <span class="hljs-keyword">get</span> fullName(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._fullName;
+  }
+
+  <span class="hljs-keyword">set</span> fullName(newName: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-keyword">if</span> (newName &amp;&amp; newName.length &gt; fullNameMaxLength) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"fullName has a max length of "</span> + fullNameMaxLength);
+    }
+
+    <span class="hljs-keyword">this</span>._fullName = newName;
+  }
+}
+
+<span class="hljs-keyword">let</span> employee = <span class="hljs-keyword">new</span> Employee();
+employee.fullName = <span class="hljs-string">"Bob Smith"</span>;
+<span class="hljs-keyword">if</span> (employee.fullName) {
+  <span class="hljs-built_in">console</span>.log(employee.fullName);
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="静态属性"></a><a href="#静态属性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>静态属性</h2>
+<p><code>static</code></p>
+<h2><a class="anchor" aria-hidden="true" id="abstract-classes"></a><a href="#abstract-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Abstract Classes</h2>
+<p>Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly. Unlike an interface, an abstract class may contain implementation details for its members. The abstract keyword is used to define abstract classes as well as abstract methods within an abstract class.</p>
+<p>Methods within an abstract class that are marked as abstract do not contain an implementation and must be implemented in derived classes. Abstract methods share a similar syntax to interface methods. Both define the signature of a method without including a method body. However, abstract methods must include the abstract keyword and may optionally include access modifiers.</p>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> Department {
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> name: <span class="hljs-built_in">string</span></span>) {}
+
+  printName(): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Department name: "</span> + <span class="hljs-keyword">this</span>.name);
+  }
+
+  <span class="hljs-keyword">abstract</span> printMeeting(): <span class="hljs-built_in">void</span>; <span class="hljs-comment">// must be implemented in derived classes</span>
+}
+
+<span class="hljs-keyword">class</span> AccountingDepartment <span class="hljs-keyword">extends</span> Department {
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">super</span>(<span class="hljs-string">"Accounting and Auditing"</span>); <span class="hljs-comment">// constructors in derived classes must call super()</span>
+  }
+
+  printMeeting(): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The Accounting Department meets each Monday at 10am."</span>);
+  }
+
+  generateReports(): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Generating accounting reports..."</span>);
+  }
+}
+
+<span class="hljs-keyword">let</span> department: Department; <span class="hljs-comment">// ok to create a reference to an abstract type</span>
+department = <span class="hljs-keyword">new</span> Department(); <span class="hljs-comment">// error: cannot create an instance of an abstract class</span>
+department = <span class="hljs-keyword">new</span> AccountingDepartment(); <span class="hljs-comment">// ok to create and assign a non-abstract subclass</span>
+department.printName();
+department.printMeeting();
+department.generateReports(); <span class="hljs-comment">// error: method doesn't exist on declared abstract type</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="advanced-techniques"></a><a href="#advanced-techniques" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Techniques</h2>
+<p>声明一个类时，声明了两种东西：实例的类型<code>SomeClass</code>，构造函数的类型<code>typeof SomeClass</code></p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#pubilc-private-protected">pubilc, private, protected</a></li><li><a href="#parameter-properties">Parameter properties</a></li><li><a href="#accessors">Accessors</a></li><li><a href="#静态属性">静态属性</a></li><li><a href="#abstract-classes">Abstract Classes</a></li><li><a href="#advanced-techniques">Advanced Techniques</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

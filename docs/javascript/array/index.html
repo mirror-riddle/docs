@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Array · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Array · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Javascript</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Javascript</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Html</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc2">document number 2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Second Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Array</h1></header><article><div><span><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></p>
+<p>数组只能以数字作为索引。因为数组也是 object，所以数组也可以有属性，但是属性和索引是分开的。数组迭代忽略属性，只关注索引。</p>
+<h2><a class="anchor" aria-hidden="true" id="常规操作"></a><a href="#常规操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常规操作</h2>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Create Array</span>
+<span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Orange"</span>];
+
+<span class="hljs-comment">// access Array item</span>
+<span class="hljs-keyword">const</span> first = fruits[<span class="hljs-number">0</span>];
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-keyword">const</span> last = fruits[fruits.length - <span class="hljs-number">1</span>];
+<span class="hljs-comment">// Orange</span>
+
+<span class="hljs-comment">// Loop over Array</span>
+fruits.forEach(<span class="hljs-function">(<span class="hljs-params">item, index, array</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(index, <span class="hljs-string">" "</span>, item);
+});
+<span class="hljs-comment">// 0 Apple</span>
+<span class="hljs-comment">// 1 Orange</span>
+
+<span class="hljs-comment">// Add to end of Array</span>
+fruits.push(<span class="hljs-string">"Banana"</span>);
+<span class="hljs-comment">// ['Apple', 'Orange', 'Banana']</span>
+
+<span class="hljs-comment">// Remove from end of Array</span>
+fruits.pop();
+<span class="hljs-comment">// ['Apple', 'Orange']</span>
+
+<span class="hljs-comment">// Remove from front of Array</span>
+fruits.shift();
+<span class="hljs-comment">// ['Orange']</span>
+
+<span class="hljs-comment">// Add to front of Array</span>
+fruits.unShift(<span class="hljs-string">"Apple"</span>);
+<span class="hljs-comment">// ['Apple', 'Orange']</span>
+
+<span class="hljs-comment">// Find index if item in Array</span>
+<span class="hljs-keyword">const</span> position = fruits.indexOf(<span class="hljs-string">"Apple"</span>);
+<span class="hljs-comment">// 0</span>
+
+<span class="hljs-comment">// Remove item by index position</span>
+fruits.splice(position, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// ['Orange']</span>
+
+<span class="hljs-comment">// Remove items from an index position</span>
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> [position, n] = [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>];
+<span class="hljs-keyword">const</span> removedNumbers = numbers.splice(position, n);
+<span class="hljs-built_in">console</span>.log(numbers);
+<span class="hljs-comment">// [0, 1, 2, 5]</span>
+<span class="hljs-built_in">console</span>.log(removedNumbers);
+<span class="hljs-comment">// [3, 4]</span>
+
+<span class="hljs-comment">// Copy Array</span>
+<span class="hljs-keyword">const</span> shallowCopy = fruits.slice();
+<span class="hljs-comment">// or</span>
+<span class="hljs-keyword">const</span> shallowCopy2 = [...fruits];
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="获取数组元素"></a><a href="#获取数组元素" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取数组元素</h2>
+<p>对数组索引隐式调用<code>toString()</code>，然后获取元素，所以 <code>[1]</code> 相当于 <code>[&quot;1&quot;]</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> years = [<span class="hljs-number">2019</span>, <span class="hljs-number">2020</span>];
+years[<span class="hljs-number">0</span>] === years[<span class="hljs-string">"0"</span>]; <span class="hljs-comment">// true</span>
+years[<span class="hljs-string">"1"</span>] !== years[<span class="hljs-string">"01"</span>]; <span class="hljs-comment">// true</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="length-和-数值属性"></a><a href="#length-和-数值属性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>length 和 数值属性</h2>
+<p>数组长度和数值属性相关，长度不一定等于数值属性的个数，因为数组里可能存在“断点”。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+a[<span class="hljs-number">5</span>] = <span class="hljs-number">5</span>;
+<span class="hljs-comment">// 3 numberical properties</span>
+<span class="hljs-built_in">console</span>.log(a.length);
+<span class="hljs-comment">// length is 6</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="array-静态方法"></a><a href="#array-静态方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Array 静态方法</h2>
+<p><code>Array.from(arrayLike[, mapFn[, thisArg]])</code> : 给定一个类似数组的或可迭代的对象，创建一个新数组。</p>
+<p>类似数组的对象： 有 length 属性和可索引元素的对象，比如字符串，函数参数 arguments, {length: 5}。</p>
+<p>可迭代对象： 可以 get 到它的元素的对象，比如 Map 和 Set。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> a = <span class="hljs-built_in">Array</span>.from(<span class="hljs-string">"apple"</span>);
+<span class="hljs-comment">// ['a', 'p', 'p', 'l', 'e']</span>
+<span class="hljs-keyword">const</span> b = <span class="hljs-built_in">Array</span>.from(<span class="hljs-string">"abc"</span>, x =&gt; x.toUppercase());
+<span class="hljs-comment">// ['A', 'B', 'C']</span>
+<span class="hljs-keyword">const</span> c = <span class="hljs-built_in">Array</span>.from({ <span class="hljs-attr">length</span>: <span class="hljs-number">5</span> }, (v, i) =&gt; i);
+<span class="hljs-comment">// [0,1,2,3,4]</span>
+</code></pre>
+<p>利用 Array.from()构建一个 Sequence generator</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Sequence generator function (commonly referred to as "range", e.g. Clojure, PHP etc)</span>
+<span class="hljs-keyword">const</span> range = <span class="hljs-function">(<span class="hljs-params">start, stop, step</span>) =&gt;</span>
+  <span class="hljs-built_in">Array</span>.from({ <span class="hljs-attr">length</span>: <span class="hljs-function">(<span class="hljs-params">stop - start</span>) / <span class="hljs-params">step</span> + 1 }, (<span class="hljs-params">_, i</span>) =&gt;</span> start + i * step);
+
+<span class="hljs-comment">// Generate numbers range 0..4</span>
+range(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// [0, 1, 2, 3, 4]</span>
+
+<span class="hljs-comment">// Generate numbers range 1..10 with step of 2</span>
+range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>);
+<span class="hljs-comment">// [1, 3, 5, 7, 9]</span>
+
+<span class="hljs-comment">// Generate the alphabet using Array.from making use of it being ordered as a sequence</span>
+range(<span class="hljs-string">"A"</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-string">"Z"</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-number">1</span>).map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-built_in">String</span>.fromCharCode(x));
+<span class="hljs-comment">// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",</span>
+<span class="hljs-comment">// "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]</span>
+</code></pre>
+<p><code>Array.isArray()</code> : 判断给定参数是否是数组。</p>
+<p><code>Array.of()</code> : 给定不定数量的参数，创建一个新数组。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> a = <span class="hljs-built_in">Array</span>.of(<span class="hljs-number">1</span>, <span class="hljs-string">"apple"</span>, <span class="hljs-literal">true</span>, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
+<span class="hljs-comment">// [1, 'apple', true, [1, 2]]</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="实例方法"></a><a href="#实例方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实例方法</h2>
+<p>数组实例继承自 Array.prototype 。</p>
+<h3><a class="anchor" aria-hidden="true" id="mutator-methods-改变数组的方法"></a><a href="#mutator-methods-改变数组的方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mutator methods 改变数组的方法</h3>
+<p><code>arr.copyWithin(target[, start[, end]])</code> : 浅复制数组内的部分元素，到同一数组的另一位置，返回该数组，会改变原数组，但不改变它的长度。The copyWithin works like C and C++'s memmove, and is a high-performance method to shift the data of an Array.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"d"</span>, <span class="hljs-string">"e"</span>];
+
+<span class="hljs-comment">// copy to index 0 the element at index 3</span>
+<span class="hljs-built_in">console</span>.log(array1.copyWithin(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>));
+<span class="hljs-comment">// expected output: Array ["d", "b", "c", "d", "e"]</span>
+
+<span class="hljs-comment">// copy to index 1 all elements from index 3 to the end</span>
+<span class="hljs-built_in">console</span>.log(array1.copyWithin(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>));
+<span class="hljs-comment">// expected output: Array ["d", "d", "e", "d", "e"]</span>
+</code></pre>
+<p><code>arr.fill(value[, start[, end]])</code> : 从 start 到 end, 替换成 value, 返回改变后的数组。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+
+<span class="hljs-comment">// fill with 0 from position 2 until position 4</span>
+<span class="hljs-built_in">console</span>.log(array1.fill(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>));
+<span class="hljs-comment">// expected output: [1, 2, 0, 0]</span>
+
+<span class="hljs-comment">// fill with 5 from position 1</span>
+<span class="hljs-built_in">console</span>.log(array1.fill(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// expected output: [1, 5, 5, 5]</span>
+
+<span class="hljs-built_in">console</span>.log(array1.fill(<span class="hljs-number">6</span>));
+<span class="hljs-comment">// expected output: [6, 6, 6, 6]</span>
+</code></pre>
+<p><code>arr.pop()</code></p>
+<p><code>arr.push(element1[, ...[, elementN]])</code></p>
+<p><code>arr.shift()</code></p>
+<p><code>arr.unshift(element1[, ...[, elementN]])</code></p>
+<p><code>arr.reverse()</code></p>
+<p><code>arr.sort((firstEl, secondEl): boolean)</code></p>
+<p><code>arr.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code></p>
+<h3><a class="anchor" aria-hidden="true" id="accessor-methods-不改变数组"></a><a href="#accessor-methods-不改变数组" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessor methods 不改变数组</h3>
+<p><code>arr.concat()</code> 合并多个数组</p>
+<p>语法： <code>const new_array = old_array.concat([value1[, value2[, ...[, valueN]]]])</code></p>
+<p><code>arr.includes(valueToFind[, fromIndex])</code> 判断数组是否含有某个值</p>
+<p><code>arr.indexOf(searchElement[, fromIndex])</code> 未找到则返回-1</p>
+<p><code>arr.join([separator])</code> 合并数组，以 separator 连接</p>
+<p><code>arr.lastIndexOf(searchElement[, fromIndex])</code></p>
+<p><code>arr.slice([begin[, end]])</code></p>
+<p><code>arr.toString()</code> 元素调用 toString(), 然后用逗号连接成字符串</p>
+<p><code>arr.toLocaleString()</code></p>
+<h3><a class="anchor" aria-hidden="true" id="iteration-methods"></a><a href="#iteration-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iteration methods</h3>
+<p><code>arr.entries()</code> 返回一个新的数组迭代器对象，它包含了所有的键值对</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>];
+
+<span class="hljs-keyword">const</span> iterator1 = array1.entries();
+
+<span class="hljs-built_in">console</span>.log(iterator1.next().value);
+<span class="hljs-comment">// expected output: Array [0, "a"]</span>
+
+<span class="hljs-built_in">console</span>.log(iterator1.next().value);
+<span class="hljs-comment">// expected output: Array [1, "b"]</span>
+
+<span class="hljs-comment">// Iteration with index and element</span>
+<span class="hljs-keyword">const</span> a = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [index, element] <span class="hljs-keyword">of</span> a.entries()) {
+  <span class="hljs-built_in">console</span>.log(index, element);
+}
+
+<span class="hljs-comment">// 0 'a'</span>
+<span class="hljs-comment">// 1 'b'</span>
+<span class="hljs-comment">// 2 'c'</span>
+
+<span class="hljs-comment">// Using a for...of loop</span>
+<span class="hljs-keyword">var</span> a = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> e <span class="hljs-keyword">of</span> a.entries()) {
+  <span class="hljs-built_in">console</span>.log(e);
+}
+<span class="hljs-comment">// [0, 'a']</span>
+<span class="hljs-comment">// [1, 'b']</span>
+<span class="hljs-comment">// [2, 'c']</span>
+</code></pre>
+<p><code>arr.every(callback(element[, index[, array]])[, thisArg])</code> 测试是否每个元素都通过测试</p>
+<p><code>arr.filter(callback(element[, index[, array]])[, thisArg])</code> 创建一个新数组，它的元素为所有通过测试的元素</p>
+<p><code>arr.find(callback(element[, index[, array]])[, thisArg])</code> 返回第一个通过测试的元素</p>
+<p><code>arr.findIndex(callback(element[, index[, array]])[, thisArg])</code> 返回第一个通过测试的元素索引，都不能通过测试则返回-1</p>
+<p><code>arr.forEach(callback(currentValue [, index [, array]])[, thisArg])</code> 对每一个元素，执行一次回调函数，不能通过抛出错误来终止执行</p>
+<p><code>arr.keys()</code> 返回一个新的数组迭代器对象，它包含数组的每个索引</p>
+<p><code>arr.map()</code> 创建一个新数组，每个元素 都是原数组元素执行一个回调函数的结果</p>
+<p><code>arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])</code> 对数组里的每个元素执行 reducer 函数，最终返回一个值</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> reducer = <span class="hljs-function">(<span class="hljs-params">accumulator, currentValue</span>) =&gt;</span> accumulator + currentValue;
+
+<span class="hljs-comment">// 1 + 2 + 3 + 4</span>
+<span class="hljs-built_in">console</span>.log(array1.reduce(reducer));
+<span class="hljs-comment">// expected output: 10</span>
+
+<span class="hljs-comment">// 5 + 1 + 2 + 3 + 4</span>
+<span class="hljs-built_in">console</span>.log(array1.reduce(reducer, <span class="hljs-number">5</span>));
+<span class="hljs-comment">// expected output: 15</span>
+</code></pre>
+<p><code>arr.reduceRight()</code> 与 <code>arr.reduce()</code> 反序</p>
+<p><code>arr.some()</code> 返回 true，当至少有一个元素通过测试。对用空数组，返回 false</p>
+<p><code>arr.values()</code> 返回一个新的数组迭代器，它包含了数组的所有元素</p>
+<p><code>arr.flat([depth])</code> 将子数组元素提升到一级，按提供的深度参数递归</p>
+<p><code>arr.flatMap()</code> 相当于 flat(深度为 1) 之后再调用 map</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/docs/javascript/async-function"><span>Async Function</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#常规操作">常规操作</a></li><li><a href="#获取数组元素">获取数组元素</a></li><li><a href="#length-和-数值属性">length 和 数值属性</a></li><li><a href="#array-静态方法">Array 静态方法</a></li><li><a href="#实例方法">实例方法</a><ul class="toc-headings"><li><a href="#mutator-methods-改变数组的方法">Mutator methods 改变数组的方法</a></li><li><a href="#accessor-methods-不改变数组">Accessor methods 不改变数组</a></li><li><a href="#iteration-methods">Iteration methods</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

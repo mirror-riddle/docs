@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Attributes · Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[A Complete Guide to Data Attributes](https://css-tricks.com/a-complete-guide-to-data-attributes/)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Attributes · Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/docs/"/><meta property="og:description" content="[A Complete Guide to Data Attributes](https://css-tricks.com/a-complete-guide-to-data-attributes/)"/><meta property="og:image" content="https://mirror-riddle.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mirror-riddle.github.io/docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mirror-riddle.github.io/docs/blog/atom.xml" title="Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mirror-riddle.github.io/docs/blog/feed.xml" title="Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/redux-white.svg" alt="Docs"/><h2 class="headerTitleWithLogo">Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="/docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/docs/help" target="_self">Help</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Html</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Javascript</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Html</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc2">document number 2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Second Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Data Attributes</h1></header><article><div><span><p><a href="https://css-tricks.com/a-complete-guide-to-data-attributes/">A Complete Guide to Data Attributes</a></p>
+<h2><a class="anchor" aria-hidden="true" id="语法"></a><a href="#语法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>语法</h2>
+<p>格式为<code>data-*</code>，名称用<code>-</code>分隔</p>
+<h2><a class="anchor" aria-hidden="true" id="css"></a><a href="#css" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS</h2>
+<pre><code class="hljs css language-css"><span class="hljs-selector-attr">[data-size=<span class="hljs-string">"large"</span>]</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"download"</span>]</span> {}
+
+<span class="hljs-selector-class">.card</span><span class="hljs-selector-attr">[data-pad=<span class="hljs-string">"extra"</span>]</span> {}
+
+<span class="hljs-comment">/* Selects if the attribute is present at all */</span>
+<span class="hljs-selector-attr">[data-size]</span> { }
+
+<span class="hljs-comment">/* Selects if the attribute has a particular value */</span>
+<span class="hljs-selector-attr">[data-state=<span class="hljs-string">"open"</span>]</span>,
+<span class="hljs-selector-attr">[aria-expanded=<span class="hljs-string">"true"</span>]</span> { }
+
+<span class="hljs-comment">/* "Starts with" selector, meaning this would match "3" or anything starting with 3, like "3.14" */</span>
+<span class="hljs-selector-attr">[data-version^=<span class="hljs-string">"3"</span>]</span> { }
+
+<span class="hljs-comment">/* "Contains" meaning if the value has the string anywhere inside it */</span>
+<span class="hljs-selector-attr">[data-company*=<span class="hljs-string">"google"</span>]</span> { }
+
+<span class="hljs-comment">/* case-insensitive */</span>
+<span class="hljs-selector-attr">[data-state=<span class="hljs-string">"open"</span> i]</span> {}
+
+<span class="hljs-comment">/* use data attributes visually */</span>
+<span class="hljs-comment">/* &lt;div data-emoji="✅"&gt; */</span>
+<span class="hljs-selector-attr">[data-emoji]</span><span class="hljs-selector-pseudo">::before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(data-emoji); <span class="hljs-comment">/* Returns '✅' */</span>
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="javascript"></a><a href="#javascript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript</h2>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/* getAttribute() and setAttribute() */</span>
+<span class="hljs-keyword">let</span> value = ele.getAttribute(<span class="hljs-string">"data-state"</span>);
+ele.setAttribute(<span class="hljs-string">"data-state"</span>, <span class="hljs-string">"collapsed"</span>);
+
+<span class="hljs-comment">/* dataset */</span>
+ele.dataset.state = <span class="hljs-string">"collapsed"</span>;
+
+<span class="hljs-comment">/* access to inline dataset */</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"spaceship.png"</span>
+  <span class="hljs-attr">data-ship-id</span>=<span class="hljs-string">"324"</span> <span class="hljs-attr">data-shields</span>=<span class="hljs-string">"72%"</span>
+  <span class="hljs-attr">onclick</span>=<span class="hljs-string">"pewpew(this.dataset.shipId)"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span>
+
+<span class="hljs-comment">/* JSON data inside data atrributes */</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-person</span>=<span class="hljs-string">'
+    {
+      "name": "Chris Coyier",
+      "job": "Web Person"
+    }
+  '</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+
+<span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"li"</span>);
+
+<span class="hljs-keyword">let</span> json = el.dataset.person;
+<span class="hljs-keyword">let</span> data = <span class="hljs-built_in">JSON</span>.parse(json);
+
+<span class="hljs-built_in">console</span>.log(data.name); <span class="hljs-comment">// Chris Coyier</span>
+<span class="hljs-built_in">console</span>.log(data.job); <span class="hljs-comment">// Web Person</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/javascript/this"><span class="arrow-prev">← </span><span>This</span></a><a class="docs-next button" href="/docs/docs/doc2"><span>document number 2</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#语法">语法</a></li><li><a href="#css">CSS</a></li><li><a href="#javascript">Javascript</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/redux-white.svg" alt="Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>
