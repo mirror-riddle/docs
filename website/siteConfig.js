@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'javascript/array', label: '前端' },
+    { doc: 'javascript/array', label: 'Docs' },
     { href: 'https://github.com/mirror-riddle/learn-to-code', label: 'GitHub' }
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },

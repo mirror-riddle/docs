@@ -12,6 +12,11 @@
       "javascript/string",
       "javascript/this"
     ],
-    "Html": ["html/data-attributes"]
+    "Html": [
+      "html/data-attributes"
+    ],
+    "Bash": [
+      "bash/bash-if"
+    ]
   }
 }
