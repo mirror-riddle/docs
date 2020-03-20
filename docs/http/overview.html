@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>overview · Learn to Code</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="overview · Learn to Code"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/learn-to-code/"/><meta property="og:description" content="HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/learn-to-code/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/learn-to-code/js/scrollSpy.js"></script><link rel="stylesheet" href="/learn-to-code/css/main.css"/><script src="/learn-to-code/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/learn-to-code/"><img class="logo" src="/learn-to-code/img/redux-white.svg" alt="Learn to Code"/><h2 class="headerTitleWithLogo">Learn to Code</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/learn-to-code/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="https://github.com/mirror-riddle/learn-to-code" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Http</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Javascript<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Html<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Bash<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/bash/bash-if">If</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Http<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/learn-to-code/docs/http/overview">overview</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">overview</h1></header><article><div><span><p>HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.</p>
+<p><img src="/learn-to-code/docs/assets/fetching_a_page.png" alt="http fetch a page"></p>
+<p>Clients and servers communicate by exchanging individual messages (as opposed to a stream of data). The messages sent by the client, usually a Web browser, are called <code>requests</code> and the messages sent by the server as an answer are called <code>responses</code>.</p>
+<p><img src="/learn-to-code/docs/assets/http_layers.png" alt="http layers"></p>
+<h2><a class="anchor" aria-hidden="true" id="components-of-http-based-systems"></a><a href="#components-of-http-based-systems" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components of HTTP-based systems</h2>
+<p><img src="/learn-to-code/docs/assets/client-server-chain.png" alt="client server chain"></p>
+<p>一边是<code>user-agent</code>，通常就是浏览器，用于发送请求。要获取网页，浏览器发出请求获取html文档，如果文档中包含JS，CSS，图片，视频等，再发出额外请求去获取这些资源，最后将这些东西合在一起形成最终的网页。之后，还可以通过执行得到的JS按需获取更多网页。网页是一个超文本文档，其中可能包含着可与用户交互的链接。当用户点击链接时，浏览器将链接转化为新的请求。</p>
+<p>另一边是<code>web server</code>, 用于接收<code>user-agent</code>的请求，提供它所需要的文档。</p>
+<p>中间存在<code>proxies</code>，可对两边来往的信息进行处理（caching, filtering, load balancing, authentication, logging）。</p>
+<h2><a class="anchor" aria-hidden="true" id="what-can-be-controlled-by-http"></a><a href="#what-can-be-controlled-by-http" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What can be controlled by HTTP</h2>
+<ol>
+<li><p>Caching<br>
+How documents are cached can be controlled by HTTP. The server can instruct proxies and clients, about what to cache and for how long. The client can instruct intermediate cache proxies to ignore the stored document.</p></li>
+<li><p>Relaxing the origin constraint
+To prevent snooping and other privacy invasions, Web browsers enforce strict separation between Web sites. Only pages from the same origin can access all the information of a Web page. Though such constraint is a burden to the server, HTTP headers can relax this strict separation on the server side, allowing a document to become a patchwork of information sourced from different domains; there could even be security-related reasons to do so.</p></li>
+<li><p>Authentication
+Some pages may be protected so that only specific users can access them. Basic authentication may be provided by HTTP, either using the WWW-Authenticate and similar headers, or by setting a specific session using HTTP cookies.</p></li>
+<li><p>Proxy and tunneling
+Servers or clients are often located on intranets and hide their true IP address from other computers. HTTP requests then go through proxies to cross this network barrier. Not all proxies are HTTP proxies. The SOCKS protocol, for example, operates at a lower level. Other protocols, like ftp, can be handled by these proxies.</p></li>
+<li><p>Sessions
+Using HTTP cookies allows you to link requests with the state of the server. This creates sessions, despite basic HTTP being a state-less protocol. This is useful not only for e-commerce shopping baskets, but also for any site allowing user configuration of the output.</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="http-flow"></a><a href="#http-flow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP flow</h2>
+<p>当客户端要和服务器通信时，执行下列步骤：</p>
+<ol>
+<li><p>建立TCP连接，用于发一到多个请求，接收回应。客户端可以建立新的、重用已有的、或者建立多个TCP连接。</p></li>
+<li><p>发送HTTP消息。</p>
+<pre><code class="hljs css language-http">GET / HTTP /1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+</code></pre></li>
+<li><p>读取回应</p>
+<pre><code class="hljs css language-http">HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 14:28:02 GMT
+Server: Apache
+Last-Modified: Tue, 01 Dec 2009 20:28:22 GMT
+ETag: "51142bc1-7449-479b075b2891b"
+Accept-Ranges: bytes
+Content-Length: 29769
+Content-Type: text/html
+&lt;!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
+</code></pre></li>
+<li><p>关闭或者重用TCP连接</p></li>
+</ol>
+<p>If HTTP pipelining is activated, several requests can be sent without waiting for the first response to be fully received. HTTP pipelining has proven difficult to implement in existing networks, where old pieces of software coexist with modern versions. HTTP pipelining has been superseded in HTTP/2 with more robust multiplexing requests within a frame.</p>
+<h2><a class="anchor" aria-hidden="true" id="http-messages"></a><a href="#http-messages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP Messages</h2>
+<p>HTTP messages, as defined in HTTP/1.1 and earlier, are human-readable. In HTTP/2, these messages are embedded into a binary structure, a frame, allowing optimizations like compression of headers and multiplexing. Even if only part of the original HTTP message is sent in this version of HTTP, the semantics of each message is unchanged and the client reconstitutes (virtually) the original HTTP/1.1 request. It is therefore useful to comprehend HTTP/2 messages in the HTTP/1.1 format.</p>
+<p>There are two types of HTTP messages, requests and responses, each with its own format.</p>
+<h3><a class="anchor" aria-hidden="true" id="requests"></a><a href="#requests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requests</h3>
+<p><img src="/learn-to-code/docs/assets/http-request.png" alt="http request"></p>
+<ol>
+<li><p>HTTP 方法， POST(提交表单), GET(获取资源), OPTIONS, HEAD</p></li>
+<li><p>path, 请求路径，去除protocol，domain，port之后的路径</p></li>
+<li><p>optional headers</p></li>
+<li><p>body, 提交的数据</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="responses"></a><a href="#responses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responses</h3>
+<p><img src="/learn-to-code/docs/assets/http-response.png" alt="http response"></p>
+<ol>
+<li><p>状态码和状态消息，显示请求是否成功</p></li>
+<li><p>headers</p></li>
+<li><p>body</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="apis-based-on-http"></a><a href="#apis-based-on-http" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APIs based on HTTP</h2>
+<p><code>XMLHttpRequest</code>, <code>Fetch API</code> 用于客户端和服务器交换数据。</p>
+<p><code>server-sent events</code> 服务器单向地向客户端传送events。客户端利用<code>EventSource</code>，建立连接并监听事件。浏览器会自动将接收到的HTTP消息转化为合适的<code>Event</code>对象，将它传送相对应的event handler，如果没有对应的event handler，就传送给默认的<code>onmessage</code></p>
+<h2><a class="anchor" aria-hidden="true" id="http2"></a><a href="#http2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP/2</h2>
+<p>HTTP/2 adds some complexity, by embedding HTTP messages in frames to improve performance, the basic structure of messages has stayed the same since HTTP/1.0.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/20/2020 by hejin</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/learn-to-code/docs/bash/bash-if"><span class="arrow-prev">← </span><span>If</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#components-of-http-based-systems">Components of HTTP-based systems</a></li><li><a href="#what-can-be-controlled-by-http">What can be controlled by HTTP</a></li><li><a href="#http-flow">HTTP flow</a></li><li><a href="#http-messages">HTTP Messages</a><ul class="toc-headings"><li><a href="#requests">Requests</a></li><li><a href="#responses">Responses</a></li></ul></li><li><a href="#apis-based-on-http">APIs based on HTTP</a></li><li><a href="#http2">HTTP/2</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/learn-to-code/" class="nav-home"></a><div><h5>Docs</h5><a href="/learn-to-code/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/learn-to-code/docs/en/doc2.html">Guides (or other categories)</a><a href="/learn-to-code/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/learn-to-code/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/learn-to-code/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/learn-to-code/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright"></section></footer></div></body></html>
