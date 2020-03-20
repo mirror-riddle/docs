@@ -20,7 +20,8 @@
     ],
     "Http": [
       "http/overview",
-      "http/caching"
+      "http/caching",
+      "http/server-sent-events"
     ]
   }
 }
