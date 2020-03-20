@@ -19,7 +19,8 @@
       "bash/bash-if"
     ],
     "Http": [
-      "http/overview"
+      "http/overview",
+      "http/caching"
     ]
   }
 }
