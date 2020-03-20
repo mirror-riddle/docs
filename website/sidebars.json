@@ -17,6 +17,9 @@
     ],
     "Bash": [
       "bash/bash-if"
+    ],
+    "Http": [
+      "http/overview"
     ]
   }
 }
