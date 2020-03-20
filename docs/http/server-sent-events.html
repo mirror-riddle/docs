@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>server sent events · Learn to Code</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Traditionally, a web page has to send a request to the server to receive new data; that is, the page requests data from the server. With server-sent events, it&#x27;s possible for a server to send new data to a web page at any time, by pushing messages to the web page. These incoming messages can be treated as Events + data inside the web page."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="server sent events · Learn to Code"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/learn-to-code/"/><meta property="og:description" content="Traditionally, a web page has to send a request to the server to receive new data; that is, the page requests data from the server. With server-sent events, it&#x27;s possible for a server to send new data to a web page at any time, by pushing messages to the web page. These incoming messages can be treated as Events + data inside the web page."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/learn-to-code/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/learn-to-code/js/scrollSpy.js"></script><link rel="stylesheet" href="/learn-to-code/css/main.css"/><script src="/learn-to-code/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/learn-to-code/"><img class="logo" src="/learn-to-code/img/redux-white.svg" alt="Learn to Code"/><h2 class="headerTitleWithLogo">Learn to Code</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/learn-to-code/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="https://github.com/mirror-riddle/learn-to-code" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Http</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Javascript<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Html<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Bash<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/bash/bash-if">If</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Http<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/http/overview">overview</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/http/caching">caching</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/learn-to-code/docs/http/server-sent-events">server sent events</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">server sent events</h1></header><article><div><span><p>Traditionally, a web page has to send a request to the server to receive new data; that is, the page requests data from the server. With server-sent events, it's possible for a server to send new data to a web page at any time, by pushing messages to the web page. These incoming messages can be treated as Events + data inside the web page.</p>
+<h2><a class="anchor" aria-hidden="true" id="client-code"></a><a href="#client-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client Code</h2>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> eventSource = <span class="hljs-keyword">new</span> EventSource(<span class="hljs-string">'http://127.0.0.1:4000/event'</span>);
+eventSource.addEventListener(<span class="hljs-string">'cur_time'</span>, event =&gt; {
+  <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.parse(event.data);
+  <span class="hljs-keyword">const</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'div#cur_time'</span>);
+  div.innerText = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(data.time);
+});
+<span class="hljs-comment">// eventSource.close();</span>
+</code></pre>
+<pre><code class="hljs css language-html"><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"client.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cur_time"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span> 
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="server-code"></a><a href="#server-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Code</h2>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">const</span> port = <span class="hljs-string">'4000'</span>;
+<span class="hljs-keyword">const</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+<span class="hljs-keyword">const</span> server = http.createServer(<span class="hljs-function">(<span class="hljs-params">req, res</span>)=&gt;</span> {
+  <span class="hljs-keyword">if</span> (req.url === <span class="hljs-string">'/event'</span>) {
+    res.writeHead(<span class="hljs-number">200</span>, {
+      <span class="hljs-comment">// 'Cache-Control': 'no-cache',</span>
+      <span class="hljs-string">'Access-Control-Allow-Origin'</span>: <span class="hljs-string">'*'</span>,
+      <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/event-stream'</span>,
+    });
+    <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.stringify({<span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.now()});
+    res.write(<span class="hljs-string">`event: cur_time\nretry: 10000\ndata: <span class="hljs-subst">${data}</span>\n\n`</span>);
+    res.end();
+  } <span class="hljs-keyword">else</span> {
+    res.statusCode = <span class="hljs-number">200</span>;
+    res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/plain'</span>);
+    res.end(<span class="hljs-string">'Hello World!'</span>);
+  }
+});
+server.listen(port, hostname, () =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`server runing at http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="event-stream-format"></a><a href="#event-stream-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event stream format</h2>
+<p>utf-8编码文本；</p>
+<p>冒号开头为注释；</p>
+<p>消息以<code>\n\n</code>结尾；</p>
+<p>消息内的每一项以<code>\n</code>隔开；</p>
+<p>可以不时发送注释给客户端，以保持连接状态；</p>
+<p>IE不支持此API；</p>
+<p>多条消息可以合在一起发送，以<code>\n\n</code>隔开即可。</p>
+<p>每条消息可以包含以下字段，字段名后加冒号，后面再加内容，以<code>\n</code>结尾。</p>
+<ol>
+<li><p><code>event</code>
+A string identifying the type of event described. If this is specified, an event will be dispatched on the browser to the listener for the specified event name; the website source code should use addEventListener() to listen for named events. The onmessage handler is called if no event name is specified for a message.</p></li>
+<li><p><code>data</code>
+The data field for the message. When the EventSource receives multiple consecutive lines that begin with data:, it will concatenate them, inserting a newline character between each one. Trailing newlines are removed.</p></li>
+<li><p><code>id</code>
+The event ID to set the EventSource object's last event ID value.</p></li>
+<li><p><code>retry</code>
+The reconnection time to use when attempting to send the event. This must be an integer, specifying the reconnection time in milliseconds. If a non-integer value is specified, the field is ignored.</p></li>
+</ol>
+<p>All other field names are ignored.</p>
+<blockquote>
+<p>Note: If a line doesn't contain a colon, the entire line is treated as the field name with an empty value string.</p>
+</blockquote>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/20/2020 by hejin</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/learn-to-code/docs/http/caching"><span class="arrow-prev">← </span><span>caching</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#client-code">Client Code</a></li><li><a href="#server-code">Server Code</a></li><li><a href="#event-stream-format">Event stream format</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/learn-to-code/" class="nav-home"></a><div><h5>Docs</h5><a href="/learn-to-code/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/learn-to-code/docs/en/doc2.html">Guides (or other categories)</a><a href="/learn-to-code/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/learn-to-code/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/learn-to-code/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/learn-to-code/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright"></section></footer></div></body></html>

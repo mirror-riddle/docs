@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>caching · Learn to Code</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="重用已经获取的资源，可以极大地加速网页打开速度。web caching减少了延迟和网络拥堵，减少显示资源所需要的时间。"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="caching · Learn to Code"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mirror-riddle.github.io/learn-to-code/"/><meta property="og:description" content="重用已经获取的资源，可以极大地加速网页打开速度。web caching减少了延迟和网络拥堵，减少显示资源所需要的时间。"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/learn-to-code/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/learn-to-code/js/scrollSpy.js"></script><link rel="stylesheet" href="/learn-to-code/css/main.css"/><script src="/learn-to-code/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/learn-to-code/"><img class="logo" src="/learn-to-code/img/redux-white.svg" alt="Learn to Code"/><h2 class="headerTitleWithLogo">Learn to Code</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/learn-to-code/docs/javascript/array" target="_self">Docs</a></li><li class=""><a href="https://github.com/mirror-riddle/learn-to-code" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Http</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Javascript<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/array">Array</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/async-function">Async Function</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/generator">Generator</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/iteration-protocols">Iteration Protocels</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/map">Map</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/object">Object</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/regexp">RegExp</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/set">Set</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/string">String</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/javascript/this">This</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Html<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/html/data-attributes">Data Attributes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Bash<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/bash/bash-if">If</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Http<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/http/overview">overview</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/learn-to-code/docs/http/caching">caching</a></li><li class="navListItem"><a class="navItem" href="/learn-to-code/docs/http/server-sent-events">server sent events</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">caching</h1></header><article><div><span><p>重用已经获取的资源，可以极大地加速网页打开速度。web caching减少了延迟和网络拥堵，减少显示资源所需要的时间。</p>
+<p>缓存类别</p>
+<p><img src="/learn-to-code/docs/assets/http-cache-type.png" alt="http cache type"></p>
+<ol>
+<li><p>private browser cache
+存储的数据针对单个用户, 浏览器缓存所有通过HTTP获取的资源。</p></li>
+<li><p>shared proxy cache
+存储的数据针对多个用户, proxy缓存资源，给其下的多个客户端使用</p></li>
+<li><p>browser, proxy, gateway, CDN, reverse proxy, load balancer.</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="targets-of-caching-operations"></a><a href="#targets-of-caching-operations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Targets of caching operations</h2>
+<p>通常HTTP缓存只针对GET请求的回应。</p>
+<ol>
+<li><p>Successful results of a retrieval request: a 200 (OK) response to a GET request containing a resource like HTML documents, images or files.</p></li>
+<li><p>Permanent redirects: a 301 (Moved Permanently) response.</p></li>
+<li><p>Error responses: a 404 (Not Found) result page.</p></li>
+<li><p>Incomplete results: a 206 (Partial Content) response.</p></li>
+<li><p>Responses other than GET if something suitable for use as a cache key is defined.</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="controlling-caching"></a><a href="#controlling-caching" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Controlling caching</h2>
+<p><code>Cache-Control</code> header specify directives for caching mechanisms in both requests and responses.</p>
+<ol>
+<li><p>no caching</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Cache-Control</span>: no-store
+</code></pre></li>
+<li><p>cache but revalidate: A cache will send the request to the origin server for validation before releasing a cached copy.</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Cache-Control</span>: no-cache
+</code></pre></li>
+<li><p>private and public caches</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Cache-Control</span>: private
+<span class="hljs-attribute">Cache-Control</span>: public
+</code></pre></li>
+<li><p>expiration</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Cache-Control</span>: max-age=200000
+</code></pre></li>
+<li><p>validation</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Cache-Control</span>: must-revalidate
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="freshness"></a><a href="#freshness" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Freshness</h2>
+<p>Once a resource is stored in a cache, it could theoretically be served by the cache forever. Caches have finite storage so items are periodically removed from storage. This process is called <code>cache eviction</code>. On the other side, some resources may change on the server so the cache should be updated. As HTTP is a client-server protocol, servers can't contact caches and clients when a resource changes; they have to communicate an expiration time for the resource. Before this expiration time, the resource is fresh; after the expiration time, the resource is stale. Eviction algorithms often privilege fresh resources over stale resources. Note that a stale resource is not evicted or ignored; when the cache receives a request for a stale resource, it forwards this request with a If-None-Match to check if it is in fact still fresh. If so, the server returns a 304 (Not Modified) header without sending the body of the requested resource, saving some bandwidth.</p>
+<p><img src="/learn-to-code/docs/assets/http-staleness.png" alt="http staleness"></p>
+<h2><a class="anchor" aria-hidden="true" id="revved-resources"></a><a href="#revved-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Revved Resources</h2>
+<p>Web developers invented a technique that Steve Souders called revving[1]. Infrequently updated files are named in specific way: in their URL, usually in the filename, a revision (or version) number is added. That way each new revision of this resource is considered as a resource on its own that never changes and that can have an expiration time very far in the future, usually one year or even more. In order to have the new versions, all the links to them must be changed, that is the drawback of this method: additional complexity that is usually taken care of by the tool chain used by Web developers. When the infrequently variable resources change they induce an additional change to often variable resources. When these are read, the new versions of the others are also read.</p>
+<p>This technique has an additional benefit: updating two cached resources at the same time will not lead to the situation where the out-dated version of one resource is used in combination with the new version of the other one. This is very important when web sites have CSS stylesheets or JS scripts that have mutual dependencies, i.e., they depend on each other because they refer to the same HTML elements.</p>
+<p><img src="/learn-to-code/docs/assets/http-revved.png" alt="http revved"></p>
+<h2><a class="anchor" aria-hidden="true" id="cache-validation"></a><a href="#cache-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cache Validation</h2>
+<p>When a cached document's expiration time has been reached, it is either validated or fetched again. Validation can only occur if the server provided either a strong validator or a weak validator.</p>
+<p>Revalidation is triggered when the user presses the reload button. It is also triggered under normal browsing if the cached response includes the &quot;Cache-control: must-revalidate&quot; header. Another factor is the cache validation preferences in the Advanced-&gt;Cache preferences panel. There is an option to force a validation each time a document is loaded.</p>
+<h3><a class="anchor" aria-hidden="true" id="etags"></a><a href="#etags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Etags</h3>
+<p>The ETag response header is an opaque-to-the-useragent value that can be used as a strong validator. That means that a HTTP user-agent, such as the browser, does not know what this string represents and can't predict what its value would be. If the ETag header was part of the response for a resource, the client can issue an If-None-Match in the header of future requests – in order to validate the cached resource.</p>
+<p>The Last-Modified response header can be used as a weak validator. It is considered weak because it only has 1-second resolution. If the Last-Modified header is present in a response, then the client can issue an If-Modified-Since request header to validate the cached document.</p>
+<p>When a validation request is made, the server can either ignore the validation request and response with a normal 200 OK, or it can return 304 Not Modified (with an empty body) to instruct the browser to use its cached copy. The latter response can also include headers that update the expiration time of the cached document.</p>
+<h2><a class="anchor" aria-hidden="true" id="varying-responses"></a><a href="#varying-responses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Varying Responses</h2>
+<p>The Vary HTTP response header determines how to match future request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server.</p>
+<p>When a cache receives a request that can be satisfied by a cached response that has a Vary header field, it must not use that cached response unless all header fields as nominated by the Vary header match in both the original (cached) request and the new request.</p>
+<p><img src="/learn-to-code/docs/assets/http-vary.png" alt="http vary"></p>
+<p>This can be useful for serving content dynamically, for example. When using the Vary: User-Agent header, caching servers should consider the user agent when deciding whether to serve the page from cache. If you are serving different content to mobile users, it can help you to avoid that a cache may mistakenly serve a desktop version of your site to your mobile users. In addition, it can help Google and other search engines to discover the mobile version of a page, and might also tell them that no Cloaking is intended.</p>
+<pre><code class="hljs css language-http"><span class="hljs-attribute">Vary</span>: User-Agent
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/20/2020 by hejin</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/learn-to-code/docs/http/overview"><span class="arrow-prev">← </span><span>overview</span></a><a class="docs-next button" href="/learn-to-code/docs/http/server-sent-events"><span>server sent events</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#targets-of-caching-operations">Targets of caching operations</a></li><li><a href="#controlling-caching">Controlling caching</a></li><li><a href="#freshness">Freshness</a></li><li><a href="#revved-resources">Revved Resources</a></li><li><a href="#cache-validation">Cache Validation</a><ul class="toc-headings"><li><a href="#etags">Etags</a></li></ul></li><li><a href="#varying-responses">Varying Responses</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/learn-to-code/" class="nav-home"></a><div><h5>Docs</h5><a href="/learn-to-code/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/learn-to-code/docs/en/doc2.html">Guides (or other categories)</a><a href="/learn-to-code/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/learn-to-code/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/learn-to-code/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/learn-to-code/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright"></section></footer></div></body></html>
