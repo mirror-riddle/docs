@@ -12,29 +12,36 @@ title: Data Attributes
 ## CSS
 
 ```css
-[data-size="large"] {
+[data-size='large'] {
   padding: 10px;
 }
 
-button[data-type="download"] {}
+button[data-type='download'] {
+}
 
-.card[data-pad="extra"] {}
+.card[data-pad='extra'] {
+}
 
 /* Selects if the attribute is present at all */
-[data-size] { }
+[data-size] {
+}
 
 /* Selects if the attribute has a particular value */
-[data-state="open"],
-[aria-expanded="true"] { }
+[data-state='open'],
+[aria-expanded='true'] {
+}
 
 /* "Starts with" selector, meaning this would match "3" or anything starting with 3, like "3.14" */
-[data-version^="3"] { }
+[data-version^='3'] {
+}
 
 /* "Contains" meaning if the value has the string anywhere inside it */
-[data-company*="google"] { }
+[data-company*='google'] {
+}
 
 /* case-insensitive */
-[data-state="open" i] {}
+[data-state='open' i] {
+}
 
 /* use data attributes visually */
 /* <div data-emoji="✅"> */
