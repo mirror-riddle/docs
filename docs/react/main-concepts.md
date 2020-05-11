@@ -2,7 +2,7 @@
 
 ## Introducing JSX
 
-1. Babel compiles JSX down to React.createElement() calls.
+1. Babel compiles JSX down to React.createElement() calls, which creates objects (React Elements).
 
 2. JSX prevents XSS attacks. By default, React DOM escapes any values embedded in JSX before rendering them.
 
@@ -22,7 +22,11 @@
 
 2. We recommend naming props from the component’s own point of view rather than the context in which it is being used.
 
-3. Props are Read-Only. All React components must act like pure functions with respect to their props.
+3. When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+4. 纯函数：不改变输入，并且对于同样的输入，输出恒定。
+
+5. 对于 props 来说，react 组件必须是纯函数。
 
 ## State and Lifecycle
 
