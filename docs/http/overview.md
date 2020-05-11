@@ -23,8 +23,8 @@ Clients and servers communicate by exchanging individual messages (as opposed to
 
 ## What can be controlled by HTTP
 
-1. Caching  
-How documents are cached can be controlled by HTTP. The server can instruct proxies and clients, about what to cache and for how long. The client can instruct intermediate cache proxies to ignore the stored document.  
+1. Caching
+How documents are cached can be controlled by HTTP. The server can instruct proxies and clients, about what to cache and for how long. The client can instruct intermediate cache proxies to ignore the stored document.
 
 2. Relaxing the origin constraint
 To prevent snooping and other privacy invasions, Web browsers enforce strict separation between Web sites. Only pages from the same origin can access all the information of a Web page. Though such constraint is a burden to the server, HTTP headers can relax this strict separation on the server side, allowing a document to become a patchwork of information sourced from different domains; there could even be security-related reasons to do so.
@@ -65,7 +65,7 @@ Using HTTP cookies allows you to link requests with the state of the server. Thi
     Content-Type: text/html
     <!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
     ```
-  
+
 4. 关闭或者重用TCP连接
 
 If HTTP pipelining is activated, several requests can be sent without waiting for the first response to be fully received. HTTP pipelining has proven difficult to implement in existing networks, where old pieces of software coexist with modern versions. HTTP pipelining has been superseded in HTTP/2 with more robust multiplexing requests within a frame.

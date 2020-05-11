@@ -16,7 +16,7 @@ Traditionally, a web page has to send a request to the server to receive new dat
   });
   // eventSource.close();
   ```
-  
+
   ```html
   <!doctype html>
   <html>
@@ -26,11 +26,11 @@ Traditionally, a web page has to send a request to the server to receive new dat
     <body>
       <div id="cur_time"></div>
     </body>
-  </html> 
+  </html>
   ```
 
 ## Server Code
-  
+
   ```javascript
   const http = require('http');
   const port = '4000';
@@ -88,4 +88,4 @@ The reconnection time to use when attempting to send the event. This must be an 
 
 All other field names are ignored.
 
-> Note: If a line doesn't contain a colon, the entire line is treated as the field name with an empty value string. 
+> Note: If a line doesn't contain a colon, the entire line is treated as the field name with an empty value string.

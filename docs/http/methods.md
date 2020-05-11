@@ -1,5 +1,5 @@
 ---
-id: http/methods
+id: methods
 title: methods
 ---
 
@@ -27,7 +27,7 @@ title: methods
 
     Extending a database through an append operation.
 
-4. PUT replaces all current representations of the target resource with the request payload. 
+4. PUT replaces all current representations of the target resource with the request payload.
 
     一次还是多次PUT请求，结果是一样的，后面的结果会覆盖前面的，也就是说没有副作用。
     POST请求不同，它可以有副作用，比如多次提交订单导致订单量递增。

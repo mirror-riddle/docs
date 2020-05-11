@@ -1,5 +1,5 @@
 ---
-id: webpack/concepts
+id: concepts
 title: concepts
 ---
 

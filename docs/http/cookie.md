@@ -1,5 +1,5 @@
 ---
-id: http/cookie
+id: cookie
 title: Cookie
 ---
 

@@ -40,7 +40,7 @@ title: caching
     ```http
     Cache-Control: no-store
     ```
-  
+
 2. cache but revalidate: A cache will send the request to the origin server for validation before releasing a cached copy.
 
     ```http

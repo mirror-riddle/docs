@@ -1,5 +1,5 @@
 ---
-id: javascript/compose
+id: compose
 title: compose
 ---
 

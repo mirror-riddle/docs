@@ -1,5 +1,5 @@
 ---
-id: http/content-security-policy
+id: content-security-policy
 title: Content Security Policy
 ---
 

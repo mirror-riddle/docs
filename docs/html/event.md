@@ -1,5 +1,5 @@
 ---
-id: html/event
+id: html-event
 title: Event
 ---
 

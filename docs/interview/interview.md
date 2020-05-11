@@ -1,5 +1,5 @@
 ---
-id: interview/interview
+id: interview
 title: interview
 ---
 

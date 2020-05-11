@@ -1,5 +1,5 @@
 ---
-id: mirrors/taobao-mirrors
+id: taobao-mirrors
 title: taobao mirrors
 ---
 

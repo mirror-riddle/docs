@@ -1,5 +1,5 @@
 ---
-id: http/status-codes
+id: status-codes
 title: Status Codes
 ---
 

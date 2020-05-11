@@ -1,5 +1,5 @@
 ---
-id: whatwg-standards/console
+id: console
 title: console
 ---
 
