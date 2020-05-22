@@ -30,17 +30,15 @@
 
 ## State and Lifecycle
 
-1. Don't modify state directly.
+1. 不要尝试直接改变 state，这是无效的，只有在 constructor 里才可以直接给 state 赋值。
 
-2. State updates may be asynchronous.
+2. state 的更新可能是异步的，为性能考虑，react 可能将几个 setState 合并在一起执行。因为 props 和 state 都可能异步更新，所以不应该依赖它们去计算新的 state。在这种情况下，应该使用 setState((prevState, currentProps) => nextState)。
 
-3. State updates are merged.
+3. state 更新会将提供的新 state 合并到现有 state 中。
 
-4. The data flows down.
+4. 数据是从上至下流动的
 
-   Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.
-
-   This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+   组件不知道其他组件是否有状态，也不应该关心这一点。所以 state 是本地的，只有拥有和设置 state 的组件才能接触它。
 
    This is commonly called a “top-down” or “unidirectional” data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components “below” them in the tree.
 

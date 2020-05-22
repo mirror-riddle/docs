@@ -21,7 +21,7 @@ title: interview
 
    async await 相当于同步的 promise，返回的是 promise resolve 的结果。
 
-2) 事件 Event, CustomEvent, EventTarget, dispatchEvent()
+2. 事件 Event, CustomEvent, EventTarget, dispatchEvent()
 
    Event()参数，bubbles 决定是否可以冒泡，cancelable 决定是否可以取消，对不可取消的事件 preventDefault()无效。
 
@@ -47,15 +47,63 @@ title: interview
 
    自己构造的事件叫做 synthetic events，与浏览器原生事件不一样。
 
-3) 原型链 prototype, class, factory function
+3. 原型链 prototype, class, factory function
 
-4) bind(), call(), apply()
+4. bind(), call(), apply()
 
    bind(thisArg, ...args)创建一个新函数，当调用它时，this 是绑定的 this, 默认参数是绑定的参数。
 
    call(thisArg, ...args)调用一个函数，this 是绑定的 this，参数是绑定的参数。
 
-   apply(thisArg, arg[])同 call()，但是参数是参数数组。
+   apply(thisArg, arg[])同 call()，但是参数是参数数组。当一个函数接受多个参数，而你手头只有一个数组，那么就可以用 apply()直接传递这个数组给这个函数，效果相当于
+   一个一个传递参数。在 es6 中可以用 spread 语法来简化这个过程。
+
+   ```javascript
+   array.push.apply(array, arguments);
+   // or
+   array.push(...arguments);
+   ```
+
+   call 和 apply 都是改变 this 的指向，区别只在于传参方式。bind 和它们的区别是 bind()返回一个绑定了 this 的函数，可以用于实现柯里化。
+
+5. 变量提升问题（var 变量和函数声明）
+
+   JavaScript 有全局、函数、块级执行环境之分，变量总是处于三者之一当中。当执行 JavaScript 代码时，会生成执行环境，分为两个步骤，第一步是创建阶段，
+   JS 解释器会找出所有的变量名和函数名，并且在内存中给它们提前分配好空间，函数的话就把整个函数存入内存中，变量的话就把它们初始化为 undefined。第二步
+   是代码执行阶段，可以提前使用变量和函数。
+
+6. for 循环优化
+
+   事先计算长度，复杂度 O[n+1]。貌似 JavaScript 对 for 循环有优化，第一次计算数组长度后，第二次就可以直接获取，所以就算写成每次都获取长度的 for 循环，
+   性能影响也不会像想象中那么大。
+
+   ```javascript
+   for (let i = 0, len = list.length, item; i < len; i++) {
+     item = list[i];
+   }
+   ```
+
+   利用查询数组中不存在的索引会返回 undefined（false）的原理，以此作为判断条件。这种方法要求数组里不存在 false 类型的元素（undefined, null, 0 等）。
+   时间复杂度为 O[n]。奇怪的是，如果数组元素都是相等的，这种方法的时间复杂度会大大增加，当数组元素各异时，复杂度相当低。
+
+   ```javascript
+   for (let i = 0, item; (item = list[i]); i++) {
+     // item
+   }
+   ```
+
+7. this
+
+   当使用 new 关键字实例化构造函数时，this 绑定到实例，不可改变，优先级最高。
+   当使用 call, apply, bind 改变 this 的指向，优先级次之。
+   当函数是包含在一个对象里，由对象调用，this 指向这个对象，优先级次之。
+   当函数是包含在一个上层函数里，this 指向上层函数的作用域，优先级最低。
+
+8. async, await 区别于 promise
+
+   优点是可以写更清晰简洁的代码，不用写成串的 then。缺点是 await 会阻塞代码，导致代码失去了并发性。因为后面的代码不一定依赖前面的结果。
+
+9.
 
 ## HTTP
 
@@ -87,7 +135,7 @@ title: interview
 
    当 js stack 为空时，event loop 从 task queue 中取出最老的那个，推入 stack 执行，完毕之后再重复以上过程。
 
-   event loop 有一个 microtask queue。macrotask 是一个函数，在创建它的函数或程序结束之后，并且 JavaScript 执行 stack 为空时（刚刚执行完一个 task 或者还未执行任何 task，进行下一个 task 之前），把 microtask queue 里的 task 全部按序执行掉。
+   event loop 有一个 microtask queue。microtask 是一个函数，在创建它的函数或程序结束之后，并且 JavaScript 执行 stack 为空时（刚刚执行完一个 task 或者还未执行任何 task，进行下一个 task 之前），把 microtask queue 里的 task 全部按序执行掉。
 
    microtask 和 task 的区别，每一次 loop 只执行一个 task，但是会把 microtask queue 里的 microtask 全部执行完；如果 microtask 创建了新的 microtask，那么这些新的 microtask 会在当前 loop 中执行（所以要注意避免无限循环）。Promise 和 MutationObserver API 都运用到了 microtask。
 
